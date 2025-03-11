@@ -1,0 +1,22 @@
+node_modules
+.cache
+/build
+/public/build
+.env
+.netlify
+
+# Local Netlify folder
+.netlify
+
+# IDE files
+.vscode
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db
