@@ -1,11 +1,13 @@
 [build]
   command = "npm run build"
   publish = "public"
-  functions = "netlify/functions"
 
 [dev]
-  command = "remix dev"
+  command = "npm run dev"
   port = 3000
+
+[functions]
+  directory = "netlify/functions"
 
 [[redirects]]
   from = "/*"
