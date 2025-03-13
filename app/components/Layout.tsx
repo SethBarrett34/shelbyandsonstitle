@@ -24,6 +24,7 @@ function Header() {
     <header className="header">
       <div className="container">
         <div className="header-container">
+          {/* Logo - Left Side */}
           <Link to="/" className="logo">
             <div className="logo-icon">
               <span>S</span>
@@ -34,16 +35,16 @@ function Header() {
             </div>
           </Link>
           
-          {/* Desktop Navigation */}
+          {/* Desktop Navigation - Right Side */}
           <nav className="nav">
             <ul>
               <li><Link to="/">Home</Link></li>
               <li><Link to="/services">Services</Link></li>
-              <li><Link to="/about">About</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
+              <li><Link to="/blog-montana">Blog Montana</Link></li>
+              <li><Link to="/license-plate-gallery">License Plate Gallery</Link></li>
               <li>
-                <Link to="/quote" className="cta-button">
-                  Get a Quote
+                <Link to="/form-llc" className="cta-button">
+                  Form LLC
                 </Link>
               </li>
             </ul>
@@ -72,15 +73,15 @@ function Header() {
               <ul className="flex flex-col space-y-2">
                 <li><Link to="/" className="block py-2 px-4 hover:bg-accent-highlight rounded-lg" onClick={() => setIsMenuOpen(false)}>Home</Link></li>
                 <li><Link to="/services" className="block py-2 px-4 hover:bg-accent-highlight rounded-lg" onClick={() => setIsMenuOpen(false)}>Services</Link></li>
-                <li><Link to="/about" className="block py-2 px-4 hover:bg-accent-highlight rounded-lg" onClick={() => setIsMenuOpen(false)}>About</Link></li>
-                <li><Link to="/contact" className="block py-2 px-4 hover:bg-accent-highlight rounded-lg" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
+                <li><Link to="/blog-montana" className="block py-2 px-4 hover:bg-accent-highlight rounded-lg" onClick={() => setIsMenuOpen(false)}>Blog Montana</Link></li>
+                <li><Link to="/license-plate-gallery" className="block py-2 px-4 hover:bg-accent-highlight rounded-lg" onClick={() => setIsMenuOpen(false)}>License Plate Gallery</Link></li>
                 <li className="pt-2">
                   <Link 
-                    to="/quote"
+                    to="/form-llc"
                     onClick={() => setIsMenuOpen(false)}
                     className="block text-center py-2 px-4 bg-primary text-white rounded-lg hover:bg-primary-light"
                   >
-                    Get a Quote
+                    Form LLC
                   </Link>
                 </li>
               </ul>
@@ -149,10 +150,10 @@ function Footer() {
             <h3>Company</h3>
             <ul>
               <li><Link to="/">Home</Link></li>
-              <li><Link to="/about">About Us</Link></li>
               <li><Link to="/services">Services</Link></li>
-              <li><Link to="/contact">Contact</Link></li>
-              <li><Link to="/quote">Get a Quote</Link></li>
+              <li><Link to="/blog-montana">Blog Montana</Link></li>
+              <li><Link to="/license-plate-gallery">License Plate Gallery</Link></li>
+              <li><Link to="/form-llc">Form LLC</Link></li>
             </ul>
           </div>
           
