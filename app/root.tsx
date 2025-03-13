@@ -10,6 +10,7 @@ import type { LinksFunction, MetaFunction } from "@remix-run/node";
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: "/build/tailwind.css" },
+  { rel: "stylesheet", href: "/styles/base.css" },
   // Google Fonts - Professional combination for Title Company
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -45,7 +46,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="min-h-screen flex flex-col">
+      <body>
         <Outlet />
         <ScrollRestoration />
         <Scripts />
