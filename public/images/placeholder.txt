@@ -1,0 +1,3 @@
+This directory will contain imagery similar to the original website at https://shelbyandsonstitle.com/
+
+For the actual implementation, replace these placeholder references with real images from the original site.
