@@ -13,6 +13,9 @@ yarn-error.log*
 /dist
 .cache
 
+# Public build directory (Remix build artifacts)
+/public/build
+
 # Environment variables
 .env
 .env.local
@@ -35,14 +38,8 @@ yarn-error.log*
 # Local Netlify folder
 .netlify
 
-# IDE files
-.vscode
-.idea
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
 # OS files
 Thumbs.db
+
+# Log files
+*.log
