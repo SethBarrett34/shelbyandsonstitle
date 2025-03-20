@@ -1,135 +1,82 @@
 # Shelby and Sons Title Company
 
-A professional website for Shelby and Sons Title Company specializing in LLC registration services, built with Remix, styled with Tailwind CSS, and deployed on Netlify with Stripe payment processing integration.
+A professional website for Shelby and Sons Title Company, providing LLC registration, vehicle registration, and title services in Montana.
 
-## Project Overview
+## Overview
 
-Shelby and Sons Title Company offers comprehensive LLC registration and title services. Our website provides a streamlined platform for clients to register new LLCs, pay for services securely, access educational resources about business formation, and connect with our expert team for personalized assistance.
+This website is built with:
+- [Remix](https://remix.run) - A full-stack web framework
+- [TypeScript](https://www.typescriptlang.org/) - For type safety
+- [Tailwind CSS](https://tailwindcss.com/) - For styling
+- [Stripe](https://stripe.com) - For payment processing
+- [Netlify](https://www.netlify.com/) - For hosting and serverless functions
 
-## Technology Stack
+## Getting Started
 
-- **Frontend Framework**: [Remix](https://remix.run/) with TypeScript
-- **Styling**: [Tailwind CSS](https://tailwindcss.com/)
-- **Payment Processing**: [Stripe API](https://stripe.com/)
-- **Deployment**: [Netlify](https://www.netlify.com/) with serverless functions
-- **Version Control**: Git/GitHub
+### Prerequisites
 
-## Core Features
+- Node.js (v16 or higher)
+- npm or yarn
 
-- **LLC Registration Services**: Complete online LLC formation process
-- **Secure Payment Processing**: Integrated Stripe payment system
-- **User Dashboard**: Track application status and manage services
-- **Educational Resources**: Information about business formation and requirements
-- **Service Selection**: Multiple tiers of LLC formation packages
-- **Responsive Design**: Professional interface accessible on all devices
-- **Contact & Support**: Direct communication channels with our title experts
+### Installation
 
-## User Workflows
-
-1. **LLC Registration**:
-   - Business information collection
-   - State selection and fee calculation
-   - Document preparation
-   - Secure payment processing
-   - Application tracking
-
-2. **Client Services**:
-   - View service history
-   - Download filed documents
-   - Request additional services
-   - Schedule consultations
-
-## Development
-
-To run this project locally:
-
-1. Clone the repository:
-   ```bash
+1. Clone the repository
+   ```
    git clone https://github.com/SethBarrett34/shelbyandsonstitle.git
    cd shelbyandsonstitle
    ```
 
-2. Install dependencies:
-   ```bash
+2. Install dependencies
+   ```
    npm install
    ```
 
-3. Configure environment variables:
-   Create a `.env` file with the following variables:
+3. Set up environment variables
    ```
-   STRIPE_PUBLIC_KEY=your_stripe_public_key
-   STRIPE_SECRET_KEY=your_stripe_secret_key
+   cp .env.example .env
    ```
+   
+   Update the `.env` file with your actual API keys and configuration values.
 
-4. Start the development server:
-   ```bash
+4. Start the development server
+   ```
    npm run dev
    ```
 
-5. Open your browser and visit `http://localhost:3000`
+5. Open [http://localhost:3000](http://localhost:3000) to view the site in your browser.
 
 ## Project Structure
 
-```
-├── app/
-│   ├── components/       # Reusable UI components
-│   ├── routes/           # Route components for pages
-│   │   ├── index.tsx     # Homepage
-│   │   ├── register.tsx  # LLC registration flow
-│   │   ├── payment.tsx   # Payment processing
-│   │   ├── dashboard/    # User dashboard routes
-│   ├── models/           # Data models and types
-│   ├── utils/            # Utility functions
-│   ├── styles/           # CSS and Tailwind utilities
-│   └── root.tsx          # Root component
-├── public/               # Static assets
-├── netlify/              # Netlify configuration and functions
-│   ├── functions/        # Serverless functions
-└── package.json          # Project dependencies
-```
+- `/app` - Main application code
+  - `/components` - Reusable UI components
+  - `/routes` - Remix routes for pages
+  - `/utils` - Utility functions
+- `/public` - Static assets
+  - `/images` - Image assets
+  - `/styles` - CSS files
+- `/netlify` - Netlify functions
 
-## Building and Deployment
+## Deployment
 
-This project is set up for continuous deployment with Netlify.
+The site is deployed on Netlify. Any push to the main branch will trigger a deployment.
 
-### Manual Deployment Steps
+### Environment Variables
 
-1. Build the project:
-   ```bash
-   npm run build
-   ```
+Make sure to set up environment variables in the Netlify dashboard:
+- Go to your site settings
+- Navigate to "Build & deploy" > "Environment variables"
+- Add each variable from your `.env` file
 
-2. Deploy to Netlify:
-   ```bash
-   npx netlify deploy --prod
-   ```
+For more information, see [ENV_SETUP.md](docs/ENV_SETUP.md).
 
-### Netlify Configuration
+## Development
 
-1. Create a new site in Netlify
-2. Connect to your GitHub repository
-3. Configure build settings:
-   - Build command: `npm run build`
-   - Publish directory: `public`
-   - Functions directory: `netlify/functions`
-4. Set up environment variables in Netlify dashboard:
-   - STRIPE_PUBLIC_KEY
-   - STRIPE_SECRET_KEY
-   - Other configuration variables
+### Available Scripts
 
-## Contributing
+- `npm run dev` - Start the development server
+- `npm run build` - Build the application for production
+- `npm run start` - Start the production server (after build)
 
-1. Fork the repository
-2. Create your feature branch: `git checkout -b feature/amazing-feature`
-3. Commit your changes: `git commit -m 'Add some amazing feature'`
-4. Push to the branch: `git push origin feature/amazing-feature`
-5. Open a Pull Request
+## License
 
-## Contact
-
-For questions about our LLC registration services or website support:
-
-- **Phone**: (123) 456-7890
-- **Email**: contact@shelbyandsonstitle.com
-- **Address**: 123 Business Ave, Suite 100, Cityville, ST 12345
-- **Hours**: Monday-Friday 9:00 AM - 5:00 PM EST
+All rights reserved. This code is proprietary and confidential.
