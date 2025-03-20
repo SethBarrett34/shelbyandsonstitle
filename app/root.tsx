@@ -5,8 +5,28 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
 } from "@remix-run/react";
-import type { LinksFunction, MetaFunction } from "@remix-run/node";
+import type { LinksFunction, LoaderFunction, MetaFunction } from "@remix-run/node";
+import { json } from "@remix-run/node";
+import { getOptionalServerEnvVar } from "~/utils/env.server";
+
+// Safely expose non-sensitive environment variables to the client
+type LoaderData = {
+  ENV: {
+    APP_ENV: string;
+    STRIPE_PUBLISHABLE_KEY: string;
+  };
+};
+
+export const loader: LoaderFunction = async () => {
+  return json<LoaderData>({
+    ENV: {
+      APP_ENV: getOptionalServerEnvVar("APP_ENV", "development"),
+      STRIPE_PUBLISHABLE_KEY: getOptionalServerEnvVar("STRIPE_PUBLISHABLE_KEY", ""),
+    },
+  });
+};
 
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: "/build/tailwind.css" },
@@ -40,6 +60,8 @@ export const meta: MetaFunction = () => {
 };
 
 export default function App() {
+  const data = useLoaderData<LoaderData>();
+
   return (
     <html lang="en" className="scroll-smooth">
       <head>
@@ -49,6 +71,11 @@ export default function App() {
       <body className="bg-white text-gray-900 font-inter">
         <Outlet />
         <ScrollRestoration />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `window.ENV = ${JSON.stringify(data.ENV)}`,
+          }}
+        />
         <Scripts />
         <LiveReload />
       </body>
