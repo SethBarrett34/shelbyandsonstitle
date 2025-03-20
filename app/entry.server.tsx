@@ -5,26 +5,29 @@
  */
 
 import { PassThrough } from "node:stream";
-import { createReadableStreamFromReadable } from "@remix-run/node";
+import { createReadableStreamFromReadable, EntryContext } from "@remix-run/node";
 import { RemixServer } from "@remix-run/react";
-import { isbot } from "isbot";
+import isbot from "isbot";
 import { renderToPipeableStream } from "react-dom/server";
-import { renderToString } from "react-dom/server";
 
 const ABORT_DELAY = 5_000;
 
 export default function handleRequest(
-  request,
-  responseStatusCode,
-  responseHeaders,
-  remixContext,
-  loadContext
+  request: Request,
+  responseStatusCode: number,
+  responseHeaders: Headers,
+  remixContext: EntryContext,
+  loadContext: unknown
 ) {
-  // If the request is for a static file that is served through
-  // the public folder, simply return and let the express static
-  // middleware handle it
+  // If the request is for a static file or has an extension, let the 
+  // static middleware handle it instead of Remix rendering
   const url = new URL(request.url);
-  if (url.pathname.startsWith("/build/") || url.pathname.includes(".")) {
+  const isStaticAsset = url.pathname.startsWith("/build/") || 
+                         url.pathname.startsWith("/styles/") ||
+                         url.pathname.startsWith("/images/") ||
+                         url.pathname.includes(".");
+                         
+  if (isStaticAsset) {
     return new Response(null, { status: 404 });
   }
 
@@ -44,10 +47,10 @@ export default function handleRequest(
 }
 
 function handleBotRequest(
-  request,
-  responseStatusCode,
-  responseHeaders,
-  remixContext
+  request: Request,
+  responseStatusCode: number,
+  responseHeaders: Headers,
+  remixContext: EntryContext
 ) {
   return new Promise((resolve, reject) => {
     let shellRendered = false;
@@ -94,10 +97,10 @@ function handleBotRequest(
 }
 
 function handleBrowserRequest(
-  request,
-  responseStatusCode,
-  responseHeaders,
-  remixContext
+  request: Request,
+  responseStatusCode: number,
+  responseHeaders: Headers,
+  remixContext: EntryContext
 ) {
   return new Promise((resolve, reject) => {
     let shellRendered = false;

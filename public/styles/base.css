@@ -46,8 +46,8 @@ html, body {
 
 /* Header styles */
 .header {
-  background-color: white;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  background-color: #000000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
   width: 100%;
   z-index: 10;
   position: sticky;
@@ -58,25 +58,34 @@ html, body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 0;
+  padding: 0.75rem 0;
 }
 
-.logo {
+.logo, .footer-logo {
   display: flex;
   align-items: center;
+  position: relative;
+  overflow: visible;
+  text-indent: -9999px;
+  font-size: 0;
+  line-height: 0;
 }
 
-.logo-icon {
-  width: 2.5rem;
-  height: 2.5rem;
-  background-color: #1e40af;
-  border-radius: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: white;
-  font-weight: bold;
-  margin-right: 0.75rem;
+.logo-image, .footer-logo-image {
+  display: block;
+}
+
+.logo-image {
+  width: 280px;
+  height: auto;
+  margin-right: 0;
+  object-fit: contain;
+  filter: brightness(0) invert(1); /* Make the logo white for better visibility on black */
+}
+
+.logo span, .logo::before, .logo::after,
+.footer-logo span, .footer-logo::before, .footer-logo::after {
+  display: none;
 }
 
 .nav {
@@ -94,15 +103,15 @@ html, body {
 .nav a {
   padding: 0.5rem 0.75rem;
   border-radius: 0.375rem;
-  color: #334155;
+  color: #ffffff;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.2s;
 }
 
 .nav a:hover {
-  background-color: #dbeafe;
-  color: #1e40af;
+  background-color: #333333;
+  color: #ffffff;
 }
 
 .cta-button {
@@ -125,6 +134,7 @@ html, body {
   border: none;
   cursor: pointer;
   padding: 0.5rem;
+  color: #ffffff;
 }
 
 @media screen and (min-width: 768px) {
@@ -157,17 +167,11 @@ html, body {
   margin-bottom: 1rem;
 }
 
-.footer-logo-icon {
-  width: 2rem;
-  height: 2rem;
-  background-color: white;
-  border-radius: 0.375rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: #1e40af;
-  font-weight: bold;
+.footer-logo-image {
+  width: 4rem;
+  height: auto;
   margin-right: 0.75rem;
+  filter: brightness(0) invert(1); /* Make the logo white for the footer */
 }
 
 .footer h3 {

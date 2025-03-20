@@ -1,0 +1,488 @@
+/* Homepage Styles */
+
+/* Hero Section */
+.home-hero {
+  background-image: linear-gradient(to right, #1e40af, #3b82f6);
+  color: white;
+  padding: 5rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.home-hero .hero-pattern {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+}
+
+.home-hero .hero-content {
+  max-width: 42rem;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.home-hero .logo-title-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.home-hero .hero-logo {
+  width: 220px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  filter: brightness(0) invert(1); /* Make the logo white */
+}
+
+.home-hero .hero-title {
+  font-size: 2.25rem;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.home-hero .hero-subtitle {
+  font-size: 1.25rem;
+  line-height: 1.5;
+  font-weight: 300;
+  margin-bottom: 2rem;
+}
+
+.home-hero .button-group {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+}
+
+.home-hero .primary-button {
+  background-color: white;
+  color: #1e40af;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.home-hero .primary-button:hover {
+  background-color: #f0f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.home-hero .outline-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 0.75rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  font-size: 1.125rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+.home-hero .outline-button:hover {
+  background-color: white;
+  color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Media queries for logo and title container */
+@media (min-width: 768px) {
+  .home-hero .logo-title-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .home-hero .hero-logo {
+    margin-bottom: 0;
+    width: 180px;
+  }
+  
+  .home-hero .hero-title {
+    margin-bottom: 0;
+    text-align: left;
+    font-size: 2.5rem;
+  }
+}
+
+/* Benefits Section */
+.benefits-banner {
+  position: relative;
+  padding: 0;
+}
+
+.benefits-banner .banner-image {
+  width: 100%;
+  height: 28rem;
+  object-fit: cover;
+}
+
+.benefits-banner .overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.benefits-banner .benefits-content {
+  text-align: center;
+  color: white;
+  padding: 0 1rem;
+}
+
+.benefits-banner .benefits-title {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 2.5rem;
+}
+
+.benefits-banner .benefits-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 80rem;
+  margin: 0 auto;
+}
+
+.benefits-banner .benefit-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transform: translateY(0);
+  transition: transform 0.3s ease;
+}
+
+.benefits-banner .benefit-item:hover {
+  transform: translateY(-0.5rem) scale(1.05);
+}
+
+.benefits-banner .benefit-icon-wrapper {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 1.25rem;
+  border-radius: 9999px;
+  margin-bottom: 1rem;
+}
+
+.benefits-banner .benefit-icon {
+  width: 3rem;
+  height: 3rem;
+}
+
+.benefits-banner .benefit-label {
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+/* Services Section */
+.services-section {
+  padding: 5rem 0;
+  background-color: white;
+}
+
+.services-section .services-title-container {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.services-section .services-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.services-section .services-divider {
+  width: 5rem;
+  height: 0.25rem;
+  background-color: #1e40af;
+  margin: 0 auto;
+}
+
+.services-section .services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+.services-section .service-card {
+  background-color: white;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.services-section .service-card:hover {
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1), 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.services-section .card-image-container {
+  position: relative;
+}
+
+.services-section .card-image {
+  width: 100%;
+  height: 13rem;
+  object-fit: cover;
+}
+
+.services-section .popular-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background-color: #1e40af;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-bottom-left-radius: 0.5rem;
+  font-weight: 600;
+}
+
+.services-section .card-content {
+  padding: 1.5rem;
+}
+
+.services-section .card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.services-section .card-description {
+  color: #4b5563;
+  margin-bottom: 1.5rem;
+  line-height: 1.5;
+}
+
+.services-section .card-button {
+  display: block;
+  background-color: #1e40af;
+  color: white;
+  padding: 0.75rem 1rem;
+  border-radius: 0.5rem;
+  text-align: center;
+  font-weight: 500;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.services-section .card-button:hover {
+  background-color: #3b82f6;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  padding: 5rem 0;
+  background-color: #f8fafc;
+}
+
+.testimonial-section .testimonial-container {
+  max-width: 48rem;
+  margin: 0 auto;
+  background-color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05), 0 1px 3px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.testimonial-section .stars-container {
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-section .star-icon {
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #f59e0b;
+  margin: 0 0.25rem;
+}
+
+.testimonial-section .testimonial-text {
+  font-size: 1.25rem;
+  font-style: italic;
+  color: #4b5563;
+  margin-bottom: 2rem;
+  line-height: 1.6;
+}
+
+.testimonial-section .testimonial-author {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.testimonial-section .author-image-container {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 9999px;
+  overflow: hidden;
+  margin-right: 1rem;
+  border: 2px solid #1e40af;
+}
+
+.testimonial-section .author-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-section .author-info {
+  text-align: left;
+}
+
+.testimonial-section .author-name {
+  font-weight: 700;
+  color: #1f2937;
+}
+
+.testimonial-section .author-title {
+  color: #6b7280;
+}
+
+.testimonial-section .more-link {
+  color: #1e40af;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.testimonial-section .more-link:hover {
+  color: #3b82f6;
+}
+
+.testimonial-section .more-link-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-left: 0.25rem;
+}
+
+/* CTA Section */
+.cta-section {
+  padding: 4rem 0;
+  background-image: linear-gradient(to right, #1e40af, #2563eb);
+  color: white;
+  text-align: center;
+}
+
+.cta-section .cta-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+}
+
+.cta-section .cta-text {
+  max-width: 36rem;
+  margin: 0 auto 2.5rem;
+  font-size: 1.125rem;
+  line-height: 1.6;
+}
+
+.cta-section .button-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.cta-section .primary-button {
+  background-color: white;
+  color: #1e40af;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section .primary-button:hover {
+  background-color: #f0f9ff;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+.cta-section .outline-button {
+  background-color: transparent;
+  color: white;
+  border: 2px solid white;
+  padding: 1rem 2rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.cta-section .outline-button:hover {
+  background-color: white;
+  color: #1e40af;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* Media Queries */
+@media (min-width: 640px) {
+  .home-hero .hero-title {
+    font-size: 3rem;
+  }
+  
+  .home-hero .hero-subtitle {
+    font-size: 1.5rem;
+  }
+  
+  .benefits-banner .benefits-title {
+    font-size: 2.25rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .home-hero .hero-title {
+    font-size: 3.5rem;
+  }
+  
+  .benefits-banner .benefits-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .services-section .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .testimonial-section .testimonial-container {
+    padding: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .home-hero .hero-title {
+    font-size: 4rem;
+  }
+}
+
+/* Add styling for the header logo to make it more prominent */
+.header .logo-image {
+  width: 300px;
+  height: auto;
+  display: block;
+} 

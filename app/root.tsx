@@ -11,6 +11,7 @@ import type { LinksFunction, MetaFunction } from "@remix-run/node";
 export const links: LinksFunction = () => [
   { rel: "stylesheet", href: "/build/tailwind.css" },
   { rel: "stylesheet", href: "/styles/base.css" },
+  { rel: "stylesheet", href: "/styles/home.css" },
   // Google Fonts - Professional combination for Title Company
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
   { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
@@ -23,6 +24,7 @@ export const links: LinksFunction = () => [
 
 export const meta: MetaFunction = () => {
   return [
+    { charSet: "utf-8" },
     { title: "Shelby and Sons Title Company" },
     { name: "description", content: "Professional title company providing reliable services for residential and commercial real estate transactions." },
     { name: "viewport", content: "width=device-width,initial-scale=1" },
@@ -41,12 +43,10 @@ export default function App() {
   return (
     <html lang="en" className="scroll-smooth">
       <head>
-        <meta charSet="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <Meta />
         <Links />
       </head>
-      <body>
+      <body className="bg-white text-gray-900 font-inter">
         <Outlet />
         <ScrollRestoration />
         <Scripts />
