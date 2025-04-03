@@ -30,20 +30,20 @@ function Header() {
               src="/images/Asset-5shelby-sons-title-logo-web-sml.png" 
               alt="Shelby & Sons Title Company Logo" 
               className="logo-image"
-              width={150}
-              height={40}
+              width={225}
+              height={60}
             />
           </Link>
           
           {/* Desktop Navigation - Right Side */}
           <nav className="nav">
-            <ul>
+            <ul className="flex items-center gap-4">
               <li><Link to="/">Home</Link></li>
               <li><Link to="/services">Services</Link></li>
               <li><Link to="/blog-montana">Blog Montana</Link></li>
               <li><Link to="/license-plate-gallery">License Plate Gallery</Link></li>
               <li>
-                <Link to="/form-llc" className="cta-button">
+                <Link to="/form-llc" className="cta-button bg-primary hover:bg-primary-dark text-white py-2 px-4 rounded-lg transition-all">
                   Form LLC
                 </Link>
               </li>

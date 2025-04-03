@@ -1,0 +1,208 @@
+/*
+ * Services Page Styles
+ * This CSS file provides dedicated styles for the services page to ensure
+ * consistent rendering across all browsers.
+ */
+
+/* General resets for services page */
+.services-page {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Header styling for services page */
+.services-page header {
+  background-color: #000000;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+}
+
+/* Hero section styling */
+.services-hero {
+  background-color: #1e40af;
+  color: white;
+  padding: 4rem 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.services-hero h1 {
+  font-family: var(--font-serif, 'Playfair Display', Georgia, serif);
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.services-hero p {
+  font-size: 1.125rem;
+  max-width: 42rem;
+  line-height: 1.7;
+}
+
+/* Wave divider for cross-browser consistency */
+.services-wave {
+  margin-top: -100px;
+  position: relative;
+  z-index: 10;
+  line-height: 0;
+  overflow: hidden;
+}
+
+.services-wave svg {
+  width: 100%;
+  height: 200px;
+  display: block;
+}
+
+/* Service card styling */
+.service-card {
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;
+  overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.service-card:hover {
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transform: translateY(-4px);
+}
+
+/* Special style for recommended/priority service cards */
+.service-card[data-priority="recommended"], 
+.service-card[data-priority="true"] {
+  border: 2px solid #1e40af;
+  transform: scale(1.02);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card[data-priority="rush"] {
+  border: 2px solid #e11d48;
+  transform: scale(1.01);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.service-card[data-priority="recommended"]:hover,
+.service-card[data-priority="true"]:hover {
+  transform: scale(1.04) translateY(-4px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+.service-card[data-priority="rush"]:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 0 15px 20px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+}
+
+/* Category buttons styling */
+.category-button {
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  font-weight: 500;
+  transition: all 0.2s ease;
+  background-color: #f3f4f6;
+  color: #4b5563;
+  border: 1px solid #e5e7eb;
+  cursor: pointer;
+  font-size: 0.875rem;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.category-button:hover {
+  background-color: #e5e7eb;
+}
+
+.category-button[aria-selected="true"],
+.category-button.active {
+  background-color: #1e40af;
+  color: white;
+  border-color: #1e40af;
+}
+
+/* Service pricing styling */
+.service-price {
+  font-family: var(--font-sans, 'Inter', system-ui, sans-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1e40af;
+}
+
+/* Feature list styling */
+.service-features {
+  list-style-type: none;
+  padding: 0;
+  margin: 1.5rem 0;
+}
+
+.service-feature {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 1rem;
+}
+
+.service-icon {
+  flex-shrink: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 0.5rem;
+  background-color: #ebf4ff;
+  color: #1e40af;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 1rem;
+}
+
+/* Services grid layout */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Sticky navigation */
+.sticky-nav {
+  position: sticky;
+  top: 4rem;
+  z-index: 40;
+  background-color: white;
+  padding: 1rem 0;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.sticky-nav .hide-scrollbar {
+  display: flex;
+  flex-wrap: nowrap;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE and Edge */
+  padding-bottom: 0.5rem;
+}
+
+.sticky-nav .hide-scrollbar::-webkit-scrollbar {
+  display: none; /* Chrome, Safari and Opera */
+}

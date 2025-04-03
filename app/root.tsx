@@ -6,6 +6,7 @@ import {
   Scripts,
   ScrollRestoration,
   useLoaderData,
+  useLocation,
 } from "@remix-run/react";
 import type { LinksFunction, LoaderFunction, MetaFunction } from "@remix-run/node";
 import { json } from "@remix-run/node";
@@ -28,26 +29,31 @@ export const loader: LoaderFunction = async () => {
   });
 };
 
-export const links: LinksFunction = () => [
-  { rel: "stylesheet", href: "/build/tailwind.css" },
-  { rel: "stylesheet", href: "/styles/base.css" },
-  { rel: "stylesheet", href: "/styles/home.css" },
-  // Google Fonts - Professional combination for Title Company
-  { rel: "preconnect", href: "https://fonts.googleapis.com" },
-  { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-  { 
-    rel: "stylesheet", 
-    href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@500;600;700&family=Playfair+Display:wght@400;700&display=swap"
-  },
-  { rel: "icon", href: "/favicon.ico" },
-];
+export const links: LinksFunction = () => {
+  return [
+    { rel: "stylesheet", href: "/styles/reset.css" },
+    { rel: "stylesheet", href: "/build/tailwind.css" },
+    { rel: "stylesheet", href: "/styles/base.css" },
+    { rel: "stylesheet", href: "/styles/home.css" },
+    { rel: "stylesheet", href: "/styles/services.css" },
+    // Google Fonts - Professional combination for Title Company
+    { rel: "preconnect", href: "https://fonts.googleapis.com" },
+    { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
+    { 
+      rel: "stylesheet", 
+      href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap"
+    },
+    { rel: "icon", href: "/favicon.ico" }
+  ];
+};
 
 export const meta: MetaFunction = () => {
   return [
     { charSet: "utf-8" },
+    { name: "viewport", content: "width=device-width,initial-scale=1,maximum-scale=1" },
+    { httpEquiv: "X-UA-Compatible", content: "IE=edge,chrome=1" },
     { title: "Shelby and Sons Title Company" },
     { name: "description", content: "Professional title company providing reliable services for residential and commercial real estate transactions." },
-    { name: "viewport", content: "width=device-width,initial-scale=1" },
     // Meta tags for SEO and social sharing
     { name: "keywords", content: "title company, real estate, title services, title insurance, closing services, escrow" },
     { property: "og:title", content: "Shelby and Sons Title Company" },
@@ -68,7 +74,7 @@ export default function App() {
         <Meta />
         <Links />
       </head>
-      <body className="bg-white text-gray-900 font-inter">
+      <body className="bg-accent text-gray-800 font-sans">
         <Outlet />
         <ScrollRestoration />
         <script
